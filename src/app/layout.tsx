@@ -13,24 +13,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Your Name - Full Stack Developer & UI/UX Designer",
+  title: "Nxjay Code - Full Stack Developer & AI Enthusiast",
   description: "Professional portfolio showcasing full stack development projects, UI/UX design work, and technical expertise. Available for freelance projects and full-time opportunities.",
   keywords: "full stack developer, web developer, UI/UX designer, React, Next.js, TypeScript, portfolio",
-  authors: [{ name: "Your Name" }],
-  creator: "Your Name",
+  authors: [{ name: "Nipun Dhananjaya" }],
+  creator: "Nipun Dhananjaya",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://your-portfolio-url.com",
-    title: "Your Name - Full Stack Developer & UI/UX Designer",
-    description: "Professional portfolio showcasing full stack development projects and UI/UX design work.",
-    siteName: "Your Name Portfolio",
+    title: "Nipun Dhananjaya - Full Stack Developer & AI Enthusiast",
+    description: "Professional portfolio showcasing full stack development projects and AI Enthusiast work.",
+    siteName: "Nipun Dhananjaya Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Your Name - Full Stack Developer & UI/UX Designer",
-    description: "Professional portfolio showcasing full stack development projects and UI/UX design work.",
-    creator: "@yourusername",
+    title: "Nipun Dhananjaya - Full Stack Developer & AI Enthusiast",
+    description: "Professional portfolio showcasing full stack development projects and AI Enthusiast work.",
+    creator: "@nipun_dhananjaya",
   },
 };
 

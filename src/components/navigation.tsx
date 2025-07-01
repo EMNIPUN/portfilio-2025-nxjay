@@ -39,7 +39,7 @@ export function Navigation({ activeSection, setActiveSection }: NavigationProps)
               whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold text-primary"
             >
-              Portfolio
+              NxJay
             </motion.div>
 
             {/* Desktop Menu */}
