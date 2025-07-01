@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Code, Database, Layout, Smartphone, Globe, Zap } from "lucide-react";
+import { MarqueeDemo } from "../3dMarqueue";
 
 export function SkillsSection() {
   const containerVariants = {
@@ -66,11 +67,54 @@ export function SkillsSection() {
     },
   ];
 
-  const technologies = [
-    "JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python",
-    "PostgreSQL", "MongoDB", "Docker", "AWS", "Tailwind CSS", "Framer Motion",
-    "Git", "Figma", "Vercel", "Firebase"
-  ];
+  // Technologies grouped by type for better visual organization
+  const technologies = {
+    languages: ["JavaScript", "TypeScript", "Python", "HTML5", "CSS3", "SQL"],
+    frontend: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Redux", "Material UI", "Shadcn UI"],
+    backend: ["Node.js", "Express", "Flask", "GraphQL", "REST API"],
+    databases: ["PostgreSQL", "MongoDB", "Firebase", "Supabase", "Redis"],
+    devOps: ["Docker", "AWS", "Vercel", "CI/CD", "GitHub Actions", "Netlify"],
+    tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Jest"]
+  };
+
+  // Technology icons mapping as a Record<string, string> to fix TypeScript error
+  const techIcons: Record<string, string> = {
+    "JavaScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+    "TypeScript": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    "Python": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    "HTML5": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+    "CSS3": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+    "SQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+    "React": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+    "Next.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+    "Tailwind CSS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+    "Framer Motion": "https://cdn.worldvectorlogo.com/logos/framer-motion.svg",
+    "Redux": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
+    "Material UI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+    "Shadcn UI": "https://avatars.githubusercontent.com/u/139895814?s=200&v=4",
+    "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+    "Express": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    "Flask": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg",
+    "GraphQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg",
+    "REST API": "https://www.vectorlogo.zone/logos/openapis/openapis-icon.svg",
+    "PostgreSQL": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+    "MongoDB": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+    "Firebase": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+    "Supabase": "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png",
+    "Redis": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
+    "Docker": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    "AWS": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+    "Vercel": "https://assets.vercel.com/image/upload/front/favicon/vercel/180x180.png",
+    "CI/CD": "https://cdn-icons-png.flaticon.com/512/5568/5568377.png",
+    "GitHub Actions": "https://github.githubassets.com/assets/actions-icon-actions-61925a4b8822.svg",
+    "Netlify": "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
+    "Git": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+    "GitHub": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+    "VS Code": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg",
+    "Figma": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
+    "Postman": "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+    "Jest": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jest/jest-plain.svg",
+  };
 
   return (
     <section className="min-h-screen py-20 bg-background">
@@ -94,66 +138,58 @@ export function SkillsSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             A comprehensive skill set covering the full spectrum of modern web development
           </p>
+          <MarqueeDemo/>
         </motion.div>
 
-        {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
-            <motion.div
-              key={category.title}
+        {/* Technology Tags */}
+        <motion.div variants={itemVariants} className="mb-12">
+          <h3 className="text-2xl font-bold text-center mb-10">
+            My <span className="text-primary">Tech Stack</span>
+          </h3>
+          
+          {Object.entries(technologies).map(([category, techs], categoryIndex) => (
+            <motion.div 
+              key={category} 
+              className="mb-10"
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="p-2 bg-primary/10 rounded-lg">
-                  <category.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold">{category.title}</h3>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="h-8 w-1 rounded-full bg-gradient-to-b from-primary to-purple-500"></div>
+                <h4 className="text-lg font-semibold capitalize bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-500">{category}</h4>
               </div>
-
-              <div className="space-y-4">
-                {category.skills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-accent/30 rounded-full h-2">
-                      <motion.div
-                        className="bg-gradient-to-r from-primary to-purple-500 h-2 rounded-full"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.level}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, delay: index * 0.1 }}
+              <div className="flex flex-wrap gap-3">
+                {techs.map((tech, techIndex) => (
+                  <motion.div
+                    key={tech}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: 0.05 * techIndex + 0.1 * categoryIndex,
+                      duration: 0.3
+                    }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      boxShadow: "0 8px 16px rgba(0, 0, 0, 0.08)",
+                      y: -2
+                    }}
+                    className="px-4 py-2 rounded-xl text-sm font-medium bg-white/20 dark:bg-gray-800/30 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 hover:border-primary/40 transition-all cursor-default flex items-center gap-2.5 hover:bg-gradient-to-r hover:from-primary/10 hover:to-purple-500/10 shadow-sm"
+                  >
+                    <div className="w-5 h-5 flex items-center justify-center rounded-md overflow-hidden bg-white/80 dark:bg-gray-900/80 p-0.5">
+                      <img 
+                        src={techIcons[tech]} 
+                        alt={`${tech} icon`} 
+                        className="w-full h-full object-contain" 
                       />
                     </div>
-                  </div>
+                    <span className="font-medium">{tech}</span>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
           ))}
-        </div>
-
-        {/* Technologies Cloud */}
-        <motion.div variants={itemVariants} className="text-center">
-          <h3 className="text-2xl font-semibold mb-8">Technologies I Work With</h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {technologies.map((tech, index) => (
-              <motion.span
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="px-4 py-2 bg-accent/50 hover:bg-accent border border-border rounded-full text-sm font-medium cursor-default transition-all"
-              >
-                {tech}
-              </motion.span>
-            ))}
-          </div>
         </motion.div>
+        
       </motion.div>
     </section>
   );

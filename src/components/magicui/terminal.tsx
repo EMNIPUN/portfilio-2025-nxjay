@@ -100,20 +100,29 @@ export const Terminal = ({ children, className }: TerminalProps) => {
   return (
     <div
       className={cn(
-        "z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border border-border bg-background",
+        "z-0 h-full max-h-[400px] w-full max-w-lg rounded-xl border border-border bg-background relative overflow-hidden",
         className,
       )}
     >
-      <div className="flex flex-col gap-y-2 border-b border-border p-4">
-        <div className="flex flex-row gap-x-2">
-          <div className="h-2 w-2 rounded-full bg-red-500"></div>
-          <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
-          <div className="h-2 w-2 rounded-full bg-green-500"></div>
+      <div className="flex flex-col gap-y-2 border-b border-border/50 p-4 bg-accent/5 backdrop-blur-sm">
+        <div className="flex flex-row gap-x-2 items-center">
+          <div className="h-3 w-3 rounded-full bg-red-500/90 hover:bg-red-500 transition-colors"></div>
+          <div className="h-3 w-3 rounded-full bg-yellow-500/90 hover:bg-yellow-500 transition-colors"></div>
+          <div className="h-3 w-3 rounded-full bg-green-500/90 hover:bg-green-500 transition-colors"></div>
+          <div className="ml-auto bg-accent/10 px-3 py-0.5 text-xs rounded-md text-muted-foreground font-mono">
+            nipun@portfolio ~ 
+          </div>
         </div>
       </div>
-      <pre className="p-4">
-        <code className="grid gap-y-1 overflow-auto">{children}</code>
+      <pre className="p-4 pt-5">
+        <code className="grid gap-y-2 overflow-auto">{children}</code>
       </pre>
+      
+      {/* Terminal glow effect */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-teal-500/5 to-transparent"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-44 bg-teal-500/5 rounded-full blur-3xl"></div>
+      </div>
     </div>
   );
 };
