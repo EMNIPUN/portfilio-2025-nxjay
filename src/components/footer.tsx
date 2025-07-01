@@ -18,17 +18,17 @@ export function Footer({ setActiveSection }: FooterProps) {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/yourusername",
+      href: "https://github.com/nxjay", // Update with your actual GitHub username
       label: "GitHub"
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/nxjay", // Update with your actual LinkedIn username
       label: "LinkedIn"
     },
     {
       icon: Mail,
-      href: "mailto:your.email@example.com",
+      href: "mailto:your.actual.email@example.com", // Update with your actual email
       label: "Email"
     }
   ];
@@ -48,7 +48,7 @@ export function Footer({ setActiveSection }: FooterProps) {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-bold text-primary mb-4">Your Name</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">NX Jay</h3>
             <p className="text-muted-foreground mb-6 max-w-md">
               Full Stack Developer passionate about creating innovative digital solutions 
               that make a positive impact. Available for freelance projects and collaborations.
@@ -93,9 +93,9 @@ export function Footer({ setActiveSection }: FooterProps) {
           <div>
             <h4 className="font-semibold mb-4">Let&apos;s Connect</h4>
             <div className="space-y-2 text-muted-foreground">
-              <p>your.email@example.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>Your City, Country</p>
+              <p>your.actual.email@example.com</p>
+              <p>+1 (123) 456-7890</p>
+              <p>Your Actual City, Country</p>
             </div>
             <motion.button
               onClick={() => setActiveSection("contact")}
@@ -111,7 +111,7 @@ export function Footer({ setActiveSection }: FooterProps) {
         {/* Bottom Section */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="flex items-center gap-1 text-muted-foreground mb-4 md:mb-0">
-            <span>© {currentYear} Your Name. Built with</span>
+            <span>© {currentYear} NX Jay. Built with</span>
             <Heart className="w-4 h-4 text-red-500 mx-1" />
             <span>using Next.js, Tailwind CSS, and Framer Motion</span>
           </div>
