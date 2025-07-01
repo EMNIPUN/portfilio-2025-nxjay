@@ -91,7 +91,7 @@ export function Footer({ setActiveSection }: FooterProps) {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold mb-4">Let's Connect</h4>
+            <h4 className="font-semibold mb-4">Let&apos;s Connect</h4>
             <div className="space-y-2 text-muted-foreground">
               <p>your.email@example.com</p>
               <p>+1 (555) 123-4567</p>

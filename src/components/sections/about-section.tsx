@@ -1,13 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { User, Calendar, MapPin, Heart, GraduationCap, Languages, Coffee, Mail, Download } from "lucide-react";
+import { User, Calendar, MapPin, Heart, GraduationCap, Languages, Coffee, Mail } from "lucide-react";
 import { SkillsTimeline } from "../skills-timeline";
 import { Ripple } from "../magicui/ripple";
 import { QuoteCarousel } from "../quote-carousel";
 import { TagSphere } from "../tech-sphere";
-import { SectionDivider } from "../section-divider";
-import Image from "next/image";
 
 export function AboutSection() {
   const containerVariants = {
@@ -102,7 +100,7 @@ export function AboutSection() {
               
               <div className=" text-muted-foreground relative bottom-[50px] z-10">
                 <p className="text-lg leading-relaxed">
-                  I'm a dedicated <span className="text-teal-400 font-medium">Software Engineering undergraduate</span> at SLIIT with hands-on experience in full-stack web development, particularly with the MERN stack. I'm passionate about building AI-powered and user-friendly web applications that solve real-world problems.
+                  I&apos;m a dedicated <span className="text-teal-400 font-medium">Software Engineering undergraduate</span> at SLIIT with hands-on experience in full-stack web development, particularly with the MERN stack. I&apos;m passionate about building AI-powered and user-friendly web applications that solve real-world problems.
                 </p>
                 
                 <p className="text-lg leading-relaxed">

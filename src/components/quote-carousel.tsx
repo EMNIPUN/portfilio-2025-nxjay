@@ -64,7 +64,7 @@ export function QuoteCarousel({ className }: { className?: string }) {
               className="flex flex-col justify-between h-full"
             >
               <p className="text-lg text-muted-foreground italic mb-4">
-                "{quotes[activeIndex].content}"
+                &ldquo;{quotes[activeIndex].content}&rdquo;
               </p>
               
               <div>
