@@ -103,12 +103,12 @@ export function ContactSection() {
             <span className="font-medium">Get In Touch</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Start a{" "}
+            Let&apos;s Start a{" "}
             <span className="text-primary">Conversation</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Whether you have a project in mind, want to collaborate, or just want to say hello, 
-            I'd love to hear from you. Let's create something amazing together.
+            I&apos;d love to hear from you. Let&apos;s create something amazing together.
           </p>
         </motion.div>
 
@@ -116,11 +116,11 @@ export function ContactSection() {
           {/* Contact Information */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-semibold mb-6">Let&apos;s Connect</h3>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                I'm always excited to work on new projects and collaborate with talented people. 
-                Whether you're a startup looking to build your first product or an established 
-                company wanting to innovate, I'm here to help bring your vision to life.
+                I&apos;m always excited to work on new projects and collaborate with talented people. 
+                Whether you&apos;re a startup looking to build your first product or an established 
+                company wanting to innovate, I&apos;m here to help bring your vision to life.
               </p>
             </div>
 
@@ -176,7 +176,7 @@ export function ContactSection() {
                 </span>
               </div>
               <p className="text-sm text-muted-foreground">
-                I'm currently accepting new freelance projects and full-time opportunities.
+                I&apos;m currently accepting new freelance projects and full-time opportunities.
               </p>
             </motion.div>
           </motion.div>
